@@ -1,0 +1,272 @@
+<html>
+    <head>
+        <title>
+            Write a blog...
+        </title>
+        <style>
+
+        body{
+                font-family: "Roboto",sans-serif;
+                margin:0;
+                background-color: #FFFADB;
+
+            }
+
+
+        .navbar {
+            overflow: hidden;
+            background-color: #FAEFAC;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: left;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            }
+
+        input, select, option{
+            height: 5%;
+            width: 40%;
+            font-family: "Roboto",sans-serif;
+            border-radius: 5px;
+            border: 2px solid;
+            background-color: #FFFADB;
+
+
+
+        }
+
+        textarea{
+            font-family: "Roboto",sans-serif;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 2px solid;
+            background-color: #FFFADB;
+
+
+        }
+           
+        </style>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="index">Home</a>
+            <a href="travel" style="float: right;">Travel Blogs</a>
+            <a href="food" style="float: right;">Food Blogs</a>
+            <a href="fashion" style="float: right;">Fashion Blogs</a>
+            <a href="upload" style="float: right;">photographic memory</a>
+
+
+        </div>
+        <div style="margin: 4%; margin-bottom: 0;">
+            <form action="/index">
+
+                <label for="txtId">Id:</label><br>
+                <input type="text" id="txtId" name="txtId"><br><br>
+
+
+                <label for="txttitle">Blog Title:</label><br>
+                <input type="text" id="txttitle" name="txttitle"><br><br>
+
+
+                <label for="txtcategory">category:</label><br>
+                <select name="category" id="txtcategory">
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Fashion">Fashion</option>
+                </select><br><br>
+
+
+                <label for="txtauthor">Author:</label><br>
+                <input type="text" id="txtauthor" name="txtauthor"><br><br>
+
+
+                <label for="txtcontent">Blog Content:</label><br>
+                <textarea type="text" id="txtcontent" name="txtcontent"
+                    style="width:100%;
+                    height:350px;"></textarea><br><br><br>
+
+                <button id="btnSubmit" type="submit" style="font-size: 25px;
+                            border-radius: 10px; padding: 5px; background-color: #FAEBD7; ">Submit</button>
+            </form>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+            BindStudents();
+        });
+
+             $('#btnSubmit').click(function () {
+
+                let idValue = $('#txtId').val();
+                let title = $('#txttitle').val();
+                let category = $('#txtcategory').val();
+                let author = $('#txtauthor').val();
+                let content = $('#txtcontent').val();
+
+                if(category == "Food")
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            "id": idValue,
+                            "title": title,
+                            "BlogCategory": category,
+                            "author": author,
+                            "BlogContent": content,
+                        },
+                            
+                        url: "http://blogapi-env.eba-xxb3i8t2.us-east-1.elasticbeanstalk.com/blog/",
+
+                        
+                        error: function (xhr, status, error) {
+
+                            var err_msg = ''
+                            for (var prop in xhr.responseJSON) {
+                                err_msg += prop + ': ' + xhr.responseJSON[prop] + '\n';
+                            }
+
+                            alert(err_msg);
+                        },
+                        success: function (result) {
+                        
+                            BindStudents();
+                            alert('Data Saved Successfully.');
+
+                            $('#txtId').val("");
+                            $('#txttitle').val("");
+                            $('#txtcategory').val("");
+                            $('#txtauthor').val("");
+                            $('#txtcontent').val("");
+                        }
+                    });
+
+                else if (category == "Travel")
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            "id": idValue,
+                            "title": title,
+                            "BlogCategory": category,
+                            "author": author,
+                            "BlogContent": content,
+                        },
+                            
+                        url: "http://blogapi-env.eba-xxb3i8t2.us-east-1.elasticbeanstalk.com/travel/",
+
+                       
+                        error: function (xhr, status, error) {
+
+                            var err_msg = ''
+                            for (var prop in xhr.responseJSON) {
+                                err_msg += prop + ': ' + xhr.responseJSON[prop] + '\n';
+                            }
+
+                            alert(err_msg);
+                        },
+                        success: function (result) {
+                        
+                            BindStudents();
+                            alert('Data Saved Successfully.');
+
+                            $('#txtId').val("");
+                            $('#txttitle').val("");
+                            $('#txtcategory').val("");
+                            $('#txtauthor').val("");
+                            $('#txtcontent').val("");
+                        }
+                    });
+                else
+                $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            "id": idValue,
+                            "title": title,
+                            "BlogCategory": category,
+                            "author": author,
+                            "BlogContent": content,
+                        },
+                            
+                        url: "http://blogapi-env.eba-xxb3i8t2.us-east-1.elasticbeanstalk.com/fashion/",
+                        error: function (xhr, status, error) {
+
+                            var err_msg = ''
+                            for (var prop in xhr.responseJSON) {
+                                err_msg += prop + ': ' + xhr.responseJSON[prop] + '\n';
+                            }
+
+                            alert(err_msg);
+                        },
+                        success: function (result) {
+                        
+                            BindStudents();
+                            alert('Data Saved Successfully.');
+
+                            $('#txtId').val("");
+                            $('#txttitle').val("");
+                            $('#txtcategory').val("");
+                            $('#txtauthor').val("");
+                            $('#txtcontent').val("");
+                        }
+                    });
+                });
+        </script>
+        <script>
+            $(document).ready(function () {
+            BindStudents();
+        });
+
+             $('#btnSubmit').click(function () {
+
+                let idValue = $('#txtId').val();
+                let title = $('#txttitle').val();
+                let category = $('#txtcategory').val();
+                let author = $('#txtauthor').val();
+                let content = $('#txtcontent').val();
+
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            "email": "New",
+                            
+                        },
+                            
+                        url: "http://notificationapi-env.eba-rcjeegpd.us-east-1.elasticbeanstalk.com/subscription",
+
+                        
+                        error: function (xhr, status, error) {
+
+                            var err_msg = ''
+                            for (var prop in xhr.responseJSON) {
+                                err_msg += prop + ': ' + xhr.responseJSON[prop] + '\n';
+                            }
+
+                            alert(err_msg);
+                        },
+                        success: function (result) {
+                        
+                            BindStudents();
+                            alert('Data Saved Successfully.');
+
+
+                            $('#txttitle').val("");
+
+                        }
+                    });
+                });
+
+        </script>
+    </body>
+</html>

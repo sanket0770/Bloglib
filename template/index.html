@@ -1,0 +1,462 @@
+<html>
+    <head>
+        <title>
+            BlogoSphere
+        </title>
+        <style>
+            body{
+                font-family: "Roboto",sans-serif;
+                margin:0;
+            }
+
+            * {box-sizing: border-box;}
+
+
+            #navbar {
+                background-color: white;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                display: block;
+                transition: top 0.3s;
+                opacity: 1;
+            }
+
+            #navbar a {
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 15px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            a {
+                text-decoration: none;
+                color:black;
+            }
+
+            #navbar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .centered {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                                font-size: 17px;
+
+            }
+
+            .container {
+                position: relative;
+                text-align: center;
+                color: white;
+            }
+
+            .bottom-right {
+                position: absolute;
+                bottom: 30px;
+                right: 400px;
+            }
+                   
+            .bottom-left {
+                position: absolute;
+                bottom: 30px;
+                left: 400px;
+            }
+
+            .top-left {
+                position: absolute;
+                top: 150px;
+                left: 16px;
+            }
+
+            input{
+            height: 5%;
+            width: 50%;
+            font-family: "Roboto",sans-serif;
+            border-radius: 5px;
+            border: 2px solid;
+            background-color: #FFFADB;
+
+
+
+        }
+
+        </style>
+         <script
+         src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/card.css">
+        <link rel="stylesheet" href="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/moving_image.css">
+    </head>
+    <body>
+        
+        <main id="main-doc">
+            <section id="home">
+        <div style="padding:15px 15px 700px; background-color: #91032A;">
+            <div class="centered">
+                <p style="color:white; text-align: center; font-size: 30px;">Unleash
+                    your
+                    inner
+                    writer and explore a world of words with us</p>
+
+                <table>
+                    <tr>
+                        <td style="padding-left: 50px; padding-right: 50px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+
+                                        <div class="slideshow-container">
+
+                                            <div class="mySlides fade">
+                                                <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/india.jpg"
+                                                    style="width:300px;height:300px;">
+                                                <div class="text">INDIA</div>
+                                            </div>
+
+                                            <div class="mySlides fade">
+                                                <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/australia.jpg"
+                                                    style="width:300px;height:300px;">
+                                                <div class="text">AUSTRALIA</div>
+                                            </div>
+
+                                            <div class="mySlides fade">
+                                                <img
+                                                    src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/paris.jpg"
+                                                    style="width:300px;height:300px;">
+                                                <div class="text">PARIS</div>
+                                            </div>
+
+                                            <div class="mySlides fade">
+                                                <img
+                                                    src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/bali.jpg"
+                                                    style="width:300px;height:300px;">
+                                                <div class="text">BALI</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back"
+                                        style="padding-top: 100px;">
+                                        <p>Exploring new
+                                            horizons and creating unforgettable
+                                            memories</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding-left: 50px; padding-right: 50px;">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="slideshow-container">
+
+                                            <div class="mySlides1 fade">
+                                                <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/pasta.jpg"
+                                                    style="width:300px;height:300px;">
+                                                <div class="text">PASTA</div>
+                                            </div>
+
+                                            <div class="mySlides1 fade">
+                                                <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/biryani.jpg"
+                                                    style="width:300px;height:300px;">
+                                                <div class="text">BIRYANI</div>
+                                            </div>
+
+                                            <div class="mySlides1 fade">
+                                                <img
+                                                    src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/lamb.jpg"
+                                                    style="width:300px;height:300px;">
+                                                <div class="text">LAMB</div>
+                                            </div>
+
+                                            <div class="mySlides1 fade">
+                                                <img
+                                                    src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/salad.jpg"
+                                                    style="width:300px;height:300px;">
+                                                <div class="text">SALAD</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back"
+                                        style="padding-top: 100px;">
+                                        <p>Indulge in a world of flavors with our mouth-watering recipes and culinary adventures</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </td>
+                    <td style="padding-left: 50px; padding-right: 50px;">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <div class="slideshow-container">
+
+                                        <div class="mySlides2 fade">
+                                            <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/fashion1.jpg"
+                                                style="width:300px;height:300px;">
+                                            <div class="text">HANDBAG</div>
+                                        </div>
+
+                                        <div class="mySlides2 fade">
+                                            <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/fashion2.jpg"
+                                                style="width:300px;height:300px;">
+                                            <div class="text">NECKLACE</div>
+                                        </div>
+
+                                        <div class="mySlides2 fade">
+                                            <img
+                                                src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/fashion3.jpg"
+                                                style="width:300px;height:300px;">
+                                            <div class="text">RINGS</div>
+                                        </div>
+
+                                        <div class="mySlides2 fade">
+                                            <img
+                                                src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/fashion4.jpg"
+                                                style="width:300px;height:300px;">
+                                            <div class="text">EAR RINGS</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="flip-card-back"
+                                    style="padding-top: 100px;">
+                                    <p>Unleash Your Inner Fashionista: Discovering the Latest Trends and Timeless Styles</p>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    </tr>
+                </table>
+                <div style="text-align: center; margin-top: 12%">
+                    <button type="button" style="font-size: 25px;
+                    border-radius: 10px; padding: 5px; background-color: #FAEBD7; "><a href="create">Write a Blog...</a></button>
+
+                    <button type="button" style="font-size: 25px;
+                    border-radius: 10px; padding: 5px; background-color: #FAEBD7; "><a href="upload">Upload a Photo...</a></button>
+                    
+                </div>
+            </div>
+            
+        </div>
+        </section>
+
+
+
+        
+    <section id="travel">
+        <div style="background-color: #FFA500; padding:15px 15px">
+            <div class="container">
+                <div>
+                    <p style="color:white; text-align: center; font-size: 30px;"><b>Share your travel stories with everyone</b></p><br>
+                    <p style="color:white; text-align: center; font-size: 20px;font-size: 18px; padding-left: 20%; padding-right: 20%;">Share your experiences and tips from all around the world. From the bustling cities of Asia to the tranquil beaches of the Caribbean, we strive to inspire you to explore new destinations and create unforgettable memories. Join us to share the beauty of the world with everyone!</p>
+                    
+                </div>
+            </div>
+            <div>
+                <table style="margin-left: 25%; margin-top: 5%; margin-bottom: 5%;">
+                    <tr>
+                        <td style="width: 54%;">
+                            <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/plane.jpg" style="width:30%; height:50%;">
+                        </td>
+                        <td>
+                            <button type="button" value="View Blog" style="font-size: 25px;
+                            border-radius: 10px; padding: 5px; background-color: #FAEBD7; "><a href="travel">View Blog</a></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="food">
+        <div style="background-color: #388d80; padding:15px 15px">
+            <div class="container">
+                <div>
+                    <p style="color:white; text-align: center; font-size: 30px;">Share your amazing recipes with everyone</p><br>
+                    <p style="color:white; text-align: center; font-size: 18px; padding-left: 20%; padding-right: 20%;">Share your passion for delicious and healthy meals that are easy to make and bursting with flavor. Our goal is to inspire and empower everyone to create amazing dishes in your own kitchen, whether you're a seasoned cook or a beginner. From quick weeknight dinners to elegant dinner party menus, we've got you covered. Join us on this culinary journey and let's explore the world of food together!</p>
+                </div>
+            </div>
+            <div>
+                <table style="margin-left: 25%; margin-top: 5%; margin-bottom: 5%;">
+                    <tr>
+                        <td>
+                            <button type="button" value="View Blog" style="font-size: 25px;
+                            border-radius: 10px; padding: 5px; background-color: #FAEBD7; "><a href="food">View Blog</a></button>
+                        </td>
+                        <td>
+                             <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/burger.jpg" style="width:30%; height:40%; margin-left: 70%;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="fashion">
+        <div style="background-color: #2f454f; padding:15px 15px">
+            <div class="container">
+                <div>
+                    <p style="color:white; text-align: center; font-size: 30px;">Share your fashion tips with everyone</p><br>
+                    <p style="color:white; text-align: center; font-size: 18px; padding-left: 20%; padding-right: 20%;">Fashion is not just about following trends, it's about expressing your unique style and personality. From high-end luxury to affordable fast fashion, there is something for everyone in the world of fashion. Whether you prefer classic and timeless pieces or bold and daring looks, fashion is a way to showcase your individuality and creativity.</p>
+                </div>
+            </div>
+            <div>
+                <table style="margin-left: 25%; margin-top: 5%; margin-bottom: 5%;">
+                    <tr>
+                        <td>
+                            <img src="https://scp-prod-bucket-ms.s3.eu-west-1.amazonaws.com/sanket/bag.jpg" style="width:30%; height:50%;">
+                        </td>
+                        <td>
+                            <button type="button" value="View Blog" style="font-size: 25px;
+                            border-radius: 10px; padding: 5px; background-color: #FAEBD7; "><a href="fashion">View Blog</a></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div style="margin-top: 2%;" >
+    <form style="margin-left: 60%;" action="/index" >
+        <label for="txtsubscribe"><b><u>Subscribe</u>:   </b></label>
+        <input type="text" id="txtsubscribe" name="txtsubscribe">
+        <button id="btnSubmit" type="submit" style="font-size: 20px;
+        border-radius: 10px; padding: 4px; background-color: #FAEBD7; ">Submit</button>
+    </form>
+</div>
+        
+
+        <div id="navbar">
+            <a style="float: left; padding-left: 5%; padding-right: 5%;"
+                href="#home">Home</a>
+            <a style="float: right; padding-left: 5%; padding-right: 5%;"
+                href="#travel">Travel Blog</a>
+            <a style="float: right; padding-left: 5%; padding-right: 5%;"
+                href="#food">Food Blog</a>
+            <a style="float: right; padding-left: 5%; padding-right: 5%;"
+                href="#fashion">Fashion Blog</a>
+        </div>
+
+
+        <script>
+           var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos < currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+            }
+        </script>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < slides.length; i++) {
+                slides[i].className = slides[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            slides[slideIndex-1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+            }
+      
+            let slideIndex1 = 0;
+            showSlides1();
+            
+            function showSlides1() {
+            let j;
+            let slides1 = document.getElementsByClassName("mySlides1");
+            for (j = 0; j < slides1.length; j++) {
+                slides1[j].style.display = "none";  
+            }
+            slideIndex1++;
+            if (slideIndex1 > slides1.length) {slideIndex1 = 1}    
+            for (j = 0; j < slides1.length; j++) {
+                slides1[j].className = slides1[j].className.replace(" active", "");
+            }
+            slides1[slideIndex1-1].style.display = "block";  
+            slides1[slideIndex1-1].className += " active";
+            setTimeout(showSlides1, 3000); // Change image every 2 seconds
+            }
+
+            let slideIndex2 = 0;
+            showSlides2();
+            
+            function showSlides2() {
+            let k;
+            let slides2 = document.getElementsByClassName("mySlides2");
+            for (k= 0; k < slides2.length; k++) {
+                slides2[k].style.display = "none";  
+            }
+            slideIndex2++;
+            if (slideIndex2 > slides2.length) {slideIndex2 = 1}    
+            for (k = 0; k < slides2.length; k++) {
+                slides2[k].className = slides2[k].className.replace(" active", "");
+            }
+            slides2[slideIndex2-1].style.display = "block";  
+            slides2[slideIndex2-1].className += " active";
+            setTimeout(showSlides2, 3000); // Change image every 2 seconds
+            }
+        </script>
+
+        <script>
+        $(document).ready(function () {
+            BindStudents();
+        });
+
+             $('#btnSubmit').click(function () {
+
+                let subscribe = $('#txtsubscribe').val();
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        
+                        "email": subscribe,
+
+                    },
+                   
+                    url: 'http://notificationapi-env.eba-rcjeegpd.us-east-1.elasticbeanstalk.com/subscription',
+                    
+                    error: function (xhr, status, error) {
+
+                        var err_msg = ''
+                        for (var prop in xhr.responseJSON) {
+                            err_msg += prop + ': ' + xhr.responseJSON[prop] + '\n';
+                        }
+
+                        alert(err_msg);
+                        },
+                        success: function (result) {
+                        
+                        BindStudents();
+                        alert('Data Saved Successfully.');
+
+                        $('#txtsubscribe').val("");
+                    }
+                });     
+            });
+        </script>
+         
+    </body>
+</html>
